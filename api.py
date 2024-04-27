@@ -27,6 +27,7 @@ def preprocess_data(sequence):
     scaled_sequence = scaler.transform([encoded_sequence])
     return scaled_sequence[..., np.newaxis]  # Add channel dimension
 
+
 # Define the prediction endpoint
 @app.post("/predict/")
 async def predict_resistance(data: SequenceData):
@@ -41,6 +42,9 @@ async def predict_resistance(data: SequenceData):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+

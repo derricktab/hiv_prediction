@@ -1,0 +1,8 @@
+fastapi==0.100.0
+gunicorn==21.2.0
+pydantic==1.10.4
+uvicorn 
+tensorflow 
+scikit-learn 
+pandas 
+joblib
