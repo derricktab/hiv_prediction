@@ -5,8 +5,18 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
 from joblib import load
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Replace with your actual model and scaler path
 MODEL_PATH = 'best_model.h5'
